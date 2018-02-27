@@ -9,10 +9,11 @@ tpl      ------------- 模板文件
 ```
 ## 使用
 ``` 
-node index.js 路径 语言
+node src/index.js 路径 语言
 路径：可以为文件
       也可以是目录，此时遍历目录下文件，逐个解析
-语言：解析模板使用的配置文件，当前项目支持zh-cn(中文)
+语言：解析模板使用的配置文件，当前项目支持[zh-cn(中文)][ko(韩文)]
+      不使用此参数，默认使用英文配置
 ```
 ## 示例
 > 在项目路径下执行命令
@@ -62,5 +63,49 @@ node src/index.js zh zh-cn
 3</li> 
 </div></div> 
 </div> 
+
+```
+
+
+```
+使用韩文示例命令：node src/index.js ko ko
+```
+模板文件内容：
+```
+문서
+    문서머리
+    문서내용
+        용기
+            양식
+            버튼
+            소리
+        용기
+            버튼
+            소리
+
+```
+输出文件内容：
+```
+<html> 
+<head> 
+</head> 
+<body> 
+<div> 
+<form> 
+</form> 
+<button> 
+</button> 
+<audio> 
+</audio> 
+</div> 
+<div> 
+<button> 
+</button> 
+<audio> 
+</audio> 
+</div> 
+</body> 
+</html> 
+
 
 ```
